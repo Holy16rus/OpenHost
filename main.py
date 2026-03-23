@@ -42,9 +42,7 @@ async def main():
         logger.warning(f"Ошибка при настройке клавиатур: {e}")
     
     logger.info("Запуск бота...")
-    logger.info(f"Bot ID: {bot.id}")
-    
-    from aiogram.client.telegram import TelegramAPIServer
+
     try:
         bot_info = await bot.get_me()
         logger.info(f"Bot username: @{bot_info.username}")
@@ -70,7 +68,6 @@ async def on_startup(dispatcher: Dispatcher, bot: Bot):
 async def on_shutdown(dispatcher: Dispatcher, bot: Bot):
     """Действия при остановке бота"""
     logger.info("Остановка бота...")
-    await bot.session.close()
 
 if __name__ == "__main__":
     try:

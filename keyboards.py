@@ -22,14 +22,13 @@ def get_main_keyboard() -> ReplyKeyboardMarkup:
         input_field_placeholder="Выберите действие..."
     )
 
-# Инлайн клавиатура для подтверждения
-def get_confirmation_keyboard() -> InlineKeyboardMarkup:
-    """Возвращает инлайн клавиатуру для подтверждения действия"""
+# Инлайн клавиатура для подтверждения установки
+def get_install_keyboard() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
             [
-                InlineKeyboardButton(text="✅ Да", callback_data="confirm_yes"),
-                InlineKeyboardButton(text="❌ Нет", callback_data="confirm_no")
+                InlineKeyboardButton(text="✅ Установить", callback_data="install_yes"),
+                InlineKeyboardButton(text="❌ Отмена", callback_data="install_no")
             ]
         ]
     )
